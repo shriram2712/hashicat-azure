@@ -35,7 +35,7 @@ resource "azurerm_network_interface_security_group_association" "catapp-nic-sg-a
 resource "azurerm_public_ip" "catapp-pip" {
   name                = "${var.prefix}-ip"
   location            = var.location
-  resource_group_name = azurerm_resource_group.myresourcegroup.name
+  resource_group_name = data.tfe_outputs.network-outputs.values.azurerm_resource_group
   allocation_method   = "Dynamic"
   domain_name_label   = "${var.prefix}-meow"
 }
