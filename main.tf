@@ -46,6 +46,7 @@ resource "azurerm_network_security_group" "catapp-sg" {
   location            = var.location
   resource_group_name = azurerm_resource_group.myresourcegroup.name
 
+
   security_rule {
     name                       = "HTTP"
     priority                   = 100
