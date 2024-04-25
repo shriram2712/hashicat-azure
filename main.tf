@@ -76,23 +76,23 @@ resource "azurerm_network_security_group" "catapp-sg" {
   }
 }
 
-resource "azurerm_network_interface" "catapp-nic" {
-  name                      = "${var.prefix}-catapp-nic"
-  location                  = var.location
-  resource_group_name       = azurerm_resource_group.myresourcegroup.name
+# resource "azurerm_network_interface" "catapp-nic" {
+#   name                      = "${var.prefix}-catapp-nic"
+#   location                  = var.location
+#   resource_group_name       = azurerm_resource_group.myresourcegroup.name
 
-  ip_configuration {
-    name                          = "${var.prefix}ipconfig"
-    subnet_id                     = azurerm_subnet.subnet.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.catapp-pip.id
-  }
-}
+#   ip_configuration {
+#     name                          = "${var.prefix}ipconfig"
+#     subnet_id                     = azurerm_subnet.subnet.id
+#     private_ip_address_allocation = "Dynamic"
+#     public_ip_address_id          = azurerm_public_ip.catapp-pip.id
+#   }
+# }
 
-resource "azurerm_network_interface_security_group_association" "catapp-nic-sg-ass" {
-  network_interface_id      = azurerm_network_interface.catapp-nic.id
-  network_security_group_id = azurerm_network_security_group.catapp-sg.id
-}
+# resource "azurerm_network_interface_security_group_association" "catapp-nic-sg-ass" {
+#   network_interface_id      = azurerm_network_interface.catapp-nic.id
+#   network_security_group_id = azurerm_network_security_group.catapp-sg.id
+# }
 
 # resource "azurerm_public_ip" "catapp-pip" {
 #   name                = "${var.prefix}-ip"
