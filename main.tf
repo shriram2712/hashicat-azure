@@ -50,6 +50,7 @@ resource "azurerm_network_security_group" "catapp-sg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
+  
 
   security_rule {
     name                       = "HTTPS"
