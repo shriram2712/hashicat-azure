@@ -6,7 +6,6 @@
 *.tfstate.*
 
 # .tfvars files
-*.tfvars
 
 # terraformrc file
 .terraformrc
