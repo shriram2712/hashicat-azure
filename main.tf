@@ -34,6 +34,13 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = [var.subnet_prefix]
 }
 
+resource "azurerm_subnet" "subnet2" {
+  name                 = "${var.prefix}-subnet"
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  resource_group_name  = azurerm_resource_group.myresourcegroup.name
+  address_prefixes     = ["10.0.11.0/24"]
+}
+
 resource "azurerm_network_security_group" "catapp-sg" {
   name                = "${var.prefix}-sg"
   location            = var.location
