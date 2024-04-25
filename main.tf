@@ -22,7 +22,7 @@ resource "azurerm_network_interface" "catapp-nic" {
 
   ip_configuration {
     name                          = "${var.prefix}ipconfig"
-    subnet_id                     = "data.tfe_outputs.network-outputs.values.azurerm_virtual_subnet"
+    subnet_id                     = data.tfe_outputs.network-outputs.values.azurerm_virtual_subnet
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.catapp-pip.id
   }
