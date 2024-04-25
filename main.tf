@@ -83,6 +83,7 @@ resource "azurerm_network_security_group" "catapp-sg" {
   }
 }
 
+
 # resource "azurerm_network_interface" "catapp-nic" {
 #   name                      = "${var.prefix}-catapp-nic"
 #   location                  = var.location
