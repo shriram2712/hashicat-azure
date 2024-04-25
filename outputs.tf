@@ -12,9 +12,13 @@ output "azurerm_virtual_network" {
 }
 
 output "azurerm_virtual_subnet" {
-  value = azurerm_subnet.subnet.name
+  value = azurerm_subnet.subnet.id
 }
 
 output "azurerm_resource_group" {
   value = azurerm_resource_group.myresourcegroup.name
+}
+
+output "network_security_group_id" {
+  value = azurerm_network_security_group.catapp-sg.id
 }
